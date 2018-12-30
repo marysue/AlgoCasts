@@ -1,0 +1,68 @@
+ <!doctype html>
+<html>
+	<head>
+		<title>Test Harness</title>
+				
+					/* MARYS */
+
+	</head>
+<script src="reversestring/index.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+	//http://www.w3schools.com/howto/howto_js_dropdown.asp
+	/* When the user clicks on the button,
+	toggle between hiding and showing the dropdown content */
+	function Quest1Fn() {
+		document.getElementById("Quest1ID").classList.toggle("show");
+	}
+	function Quest2Fn() {
+		document.getElementById("Quest2ID").classList.toggle("show");
+	}
+	function Quest3Fn() {
+		document.getElementById("Quest3ID").classList.toggle("show");
+	}
+	function Quest4Fn() {
+		document.getElementById("Quest4ID").classList.toggle("show");
+	}
+	function Quest5Fn() {
+		document.getElementById("Quest5ID").classList.toggle("show");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+		if (!event.target.matches('.dropbtn')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		//var dropdowns = document.getElementsByID("myDropdown");
+			var i;
+	
+			for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+
+	}
+	function runFunction(functionName){
+		try{
+			document.getElementById("resultsBox").value="";
+			window['CodeEval'].evaluate(functionName, document.getElementById('inputStr').value);
+		}catch (err){
+			document.getElementById("resultsBox").value=err;
+		}
+	}
+</script>
+	<body>
+		<h2>Test Harness for JavaScript</h2>
+		
+		<div>
+		 <a href = "#" onclick="runFunction('reverse');">Run Function</a>
+		</div>
+	
+
+	</body>
+	
+
+
+</html>

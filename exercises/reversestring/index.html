@@ -1,0 +1,67 @@
+    <html>
+    <body>
+		<p> Click on the button to get the sum of the numbers in the array.</p>
+			<button onclick="myFunction()">Try integer reduce</button>
+			
+		<p>Sum of numbers in array: <span id="demo"></span></p>
+		
+		<script>
+			var numbers = [65, 44, 12, 4];
+			
+			function getSum(total, num) {
+				alert('total:  ' + total + '  num:  ' + num);
+				return total + num;
+			}
+			
+			function myFunction(itme) {
+				document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+			}
+		</script>
+		
+		<p>Click on the button to get the sum of the characters in the array.</p>
+		<button onclick="nextFunction()">Reverse Array with Reduce</button>
+		
+		<p> Sum of numbers in array: <span id="charDemo"></span></p>
+		<script>
+			var arr = [' ', 'a', 'b', 'c', 'd', ' ', ' '];
+			var str = "  abcd  ";
+			
+			function getTotalChars(total, char) {
+				var retVal = char + total;
+				alert('total: ' + total + '  char: ' + char);
+				return char + total;
+			}
+			
+			function nextFunction(foo) {
+				document.getElementById("charDemo").innerHTML =  str.split('').reduce((rev,char) => char + rev, '');
+				/*arr.reduce(getTotalChars);*/
+				/*  return str.split('').reduce((rev, char) => char + rev, '');*/
+			}
+		</script>
+		
+		<!-- NEXT -->
+		
+				<p>Click on the button to get the sum of the characters in the array.</p>
+		<button onclick="simpleFunction()">Reverse Array with arr.split and arr.reverse</button>
+		
+		<p> Sum of numbers in array: <span id="simpleDemo"></span></p>
+		<script>
+			var arr = [' ', 'a', 'b', 'c', 'd', ' ', ' '];
+			var str = "  abcd  ";
+			
+			function reverseStr(str) {
+				var arr = str.split('');
+				alert('Array appears now:  ' + arr + '  Number of elts:  ' + arr.length)
+				arr.reverse();
+				alert('Array reversed:  ' + arr + '  Array size:  ' + arr.length);
+				return arr.join('');
+			}
+			
+			function simpleFunction(foo) {
+				var outStr = reverseStr(' abcd  ');
+				
+				document.getElementById("simpleDemo").innerHTML =  outStr + '\n Number of elts:  ' + outStr.length;
+			}
+		</script>
+    </body>
+</html>
